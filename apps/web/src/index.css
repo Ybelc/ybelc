@@ -1,0 +1,322 @@
+@import "@Ybelc-Page/ui/globals.css";
+
+/*
+ * Ybelc — design tokens
+ * Paleta extraída da logo:
+ *   navy  #050A30  (fundo da marca)
+ *   blue  #233DFF  (lâmpada / peça de quebra-cabeça)
+ *   white #FFFFFF  (letra "Y" e cérebro)
+ */
+@theme inline {
+	--color-y-ink: var(--y-ink);
+	--color-y-navy: var(--y-navy);
+	--color-y-surface: var(--y-surface);
+	--color-y-raised: var(--y-raised);
+	--color-y-blue: var(--y-blue);
+	--color-y-blue-strong: var(--y-blue-strong);
+	--color-y-glow: var(--y-glow);
+	--color-y-fg: var(--y-fg);
+	--color-y-muted: var(--y-muted);
+	--color-y-line: var(--y-line);
+	--font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+	--font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+	--font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+	--y-ink: #030722;
+	--y-navy: #050a30;
+	--y-surface: #0a1140;
+	--y-raised: #0f1852;
+	--y-blue: #233dff;
+	--y-blue-strong: #1a30e0;
+	--y-glow: #8b9bff;
+	--y-fg: #f3f5ff;
+	--y-muted: #a8b0dc;
+	--y-line: rgb(139 155 255 / 0.16);
+
+	/* shadcn tokens alinhados à marca (tema escuro) */
+	--background: var(--y-navy);
+	--foreground: var(--y-fg);
+	--popover: var(--y-surface);
+	--popover-foreground: var(--y-fg);
+	--card: var(--y-surface);
+	--card-foreground: var(--y-fg);
+	--primary: var(--y-blue);
+	--primary-foreground: #ffffff;
+	--border: var(--y-line);
+	--input: rgb(139 155 255 / 0.28);
+	--ring: var(--y-glow);
+	color-scheme: dark;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 5.5rem;
+		background: var(--y-navy);
+	}
+
+	body {
+		font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+		background: var(--y-navy);
+		color: var(--y-fg);
+	}
+
+	::selection {
+		background: rgb(35 61 255 / 0.55);
+		color: #fff;
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--y-glow);
+		outline-offset: 3px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.001ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.001ms !important;
+		}
+	}
+}
+
+@layer components {
+	/* Grade técnica de fundo */
+	.y-grid {
+		background-image:
+			linear-gradient(to right, rgb(139 155 255 / 0.07) 1px, transparent 1px),
+			linear-gradient(to bottom, rgb(139 155 255 / 0.07) 1px, transparent 1px);
+		background-size: 56px 56px;
+	}
+
+	.y-grid-fade {
+		mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 75%);
+	}
+
+	/* Rótulo técnico (mono) */
+	.y-eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+		font-family: var(--font-jetbrains), ui-monospace, monospace;
+		font-size: 0.75rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--y-glow);
+	}
+
+	.y-eyebrow::before {
+		content: "";
+		width: 1.5rem;
+		height: 1px;
+		background: currentColor;
+		opacity: 0.7;
+	}
+
+	/* Superfície com borda luminosa sutil */
+	.y-panel {
+		position: relative;
+		background:
+			linear-gradient(180deg, rgb(15 24 82 / 0.72), rgb(10 17 64 / 0.72)) padding-box,
+			linear-gradient(160deg, rgb(139 155 255 / 0.35), rgb(139 155 255 / 0.06) 40%, rgb(35 61 255 / 0.25)) border-box;
+		border: 1px solid transparent;
+		backdrop-filter: blur(8px);
+	}
+
+	/* Botões */
+	.y-btn {
+		display: inline-flex;
+		min-height: 2.875rem;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		border-radius: 0.75rem;
+		padding-inline: 1.375rem;
+		font-family: var(--font-space-grotesk), sans-serif;
+		font-size: 0.9375rem;
+		font-weight: 600;
+		letter-spacing: 0.005em;
+		transition:
+			background-color 0.2s ease,
+			border-color 0.2s ease,
+			color 0.2s ease,
+			box-shadow 0.25s ease,
+			transform 0.2s ease;
+		cursor: pointer;
+	}
+
+	.y-btn:active {
+		transform: translateY(1px);
+	}
+
+	.y-btn:disabled {
+		cursor: not-allowed;
+		opacity: 0.6;
+	}
+
+	.y-btn-primary {
+		background: var(--y-blue);
+		color: #fff;
+		box-shadow:
+			0 0 0 1px rgb(139 155 255 / 0.35) inset,
+			0 10px 30px -12px rgb(35 61 255 / 0.9);
+	}
+
+	.y-btn-primary:hover:not(:disabled) {
+		background: #3550ff;
+		box-shadow:
+			0 0 0 1px rgb(139 155 255 / 0.55) inset,
+			0 14px 40px -12px rgb(35 61 255 / 1);
+	}
+
+	.y-btn-ghost {
+		border: 1px solid var(--y-line);
+		background: rgb(255 255 255 / 0.02);
+		color: var(--y-fg);
+	}
+
+	.y-btn-ghost:hover:not(:disabled) {
+		border-color: rgb(139 155 255 / 0.5);
+		background: rgb(139 155 255 / 0.08);
+	}
+
+	/* Fluxo de dados nas conexões (SVG) */
+	.y-flow {
+		stroke-dasharray: 4 10;
+		animation: y-flow 2.4s linear infinite;
+	}
+
+	.y-pulse {
+		animation: y-pulse 3.2s ease-in-out infinite;
+		transform-box: fill-box;
+		transform-origin: center;
+	}
+
+	/* Revelação ao rolar (ativada por components/ui/reveal.tsx) */
+	.y-reveal {
+		opacity: 0;
+		transform: translateY(18px);
+		transition:
+			opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+			transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+	}
+
+	.y-reveal[data-visible="true"] {
+		opacity: 1;
+		transform: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.y-reveal {
+			opacity: 1;
+			transform: none;
+		}
+
+		.y-flow,
+		.y-pulse {
+			animation: none;
+		}
+	}
+
+	/* Blog */
+	.blog-prose {
+		color: color-mix(in srgb, var(--y-fg) 86%, transparent);
+		font-size: 1.0625rem;
+		line-height: 1.8;
+	}
+
+	.blog-prose :where(h2, h3, h4) {
+		color: var(--y-fg);
+		font-family: var(--font-space-grotesk), sans-serif;
+		font-weight: 700;
+		letter-spacing: -0.01em;
+		margin-top: 2.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.blog-prose h2 {
+		font-size: 1.5rem;
+	}
+
+	.blog-prose h3 {
+		font-size: 1.25rem;
+	}
+
+	.blog-prose p {
+		margin-bottom: 1rem;
+	}
+
+	.blog-prose :where(ul, ol) {
+		margin-bottom: 1rem;
+		padding-left: 1.25rem;
+	}
+
+	.blog-prose ul {
+		list-style: disc;
+	}
+
+	.blog-prose ol {
+		list-style: decimal;
+	}
+
+	.blog-prose a {
+		color: var(--y-glow);
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	.blog-prose blockquote {
+		border-left: 3px solid var(--y-blue);
+		color: var(--y-muted);
+		margin: 1.5rem 0;
+		padding-left: 1rem;
+		font-style: italic;
+	}
+
+	.blog-prose img {
+		border-radius: 0.75rem;
+		margin: 1.5rem 0;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.blog-prose :where(strong) {
+		color: var(--y-fg);
+		font-weight: 700;
+	}
+
+	.blog-prose code {
+		font-family: var(--font-jetbrains), monospace;
+		font-size: 0.9em;
+		background: var(--y-raised);
+		border-radius: 0.375rem;
+		padding: 0.1em 0.35em;
+	}
+}
+
+@keyframes y-flow {
+	to {
+		stroke-dashoffset: -28;
+	}
+}
+
+@keyframes y-pulse {
+	0%,
+	100% {
+		opacity: 0.35;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.9;
+		transform: scale(1.12);
+	}
+}
