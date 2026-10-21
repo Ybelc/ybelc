@@ -49,9 +49,19 @@ export const baseNavLinks: NavLink[] = [
 /** @deprecated Prefer getNavLinks(showBlog) */
 export const navLinks = baseNavLinks;
 
-export function getNavLinks(showBlog: boolean): NavLink[] {
-	if (!showBlog) return baseNavLinks;
-	return [...baseNavLinks, { href: "/blog", label: "Blog" }];
+const portfolioNavLink: NavLink = { href: "/#portfolio", label: "Portfólio" };
+
+/** Insere "Portfólio" logo após "Soluções" quando houver projetos publicados. */
+function withPortfolio(links: NavLink[], showPortfolio: boolean): NavLink[] {
+	if (!showPortfolio) return links;
+	const i = links.findIndex((l) => l.href === "/#solucoes");
+	return [...links.slice(0, i + 1), portfolioNavLink, ...links.slice(i + 1)];
+}
+
+export function getNavLinks(showBlog: boolean, showPortfolio = false): NavLink[] {
+	const links = withPortfolio(baseNavLinks, showPortfolio);
+	if (!showBlog) return links;
+	return [...links, { href: "/blog", label: "Blog" }];
 }
 
 /* -------------------------------------------------------------------------- */
@@ -158,6 +168,18 @@ export const solutionLabels: Record<SolutionArea | "geral", string> = {
 	seguranca: "Segurança tecnológica",
 	geral: "Ainda não sei / Projeto integrado",
 };
+
+/* -------------------------------------------------------------------------- */
+/*                                 Portfólio                                  */
+/* -------------------------------------------------------------------------- */
+
+export const portfolio = {
+	eyebrow: "Portfólio · Laboratório Ybelc",
+	heading: "Projetos que saem do papel e entram em operação.",
+	subheading:
+		"Sistemas, aplicações, dispositivos conectados e experimentos digitais desenvolvidos pela Ybelc. Passe o cursor — ou toque — para explorar cada projeto.",
+	allLabel: "Ver portfólio completo",
+} as const;
 
 /* -------------------------------------------------------------------------- */
 /*                           Ecossistema integrado                            */
@@ -271,7 +293,8 @@ export const baseFooterQuickLinks: NavLink[] = [
 /** @deprecated Prefer getFooterQuickLinks(showBlog) */
 export const footerQuickLinks = baseFooterQuickLinks;
 
-export function getFooterQuickLinks(showBlog: boolean): NavLink[] {
-	if (!showBlog) return baseFooterQuickLinks;
-	return [...baseFooterQuickLinks, { href: "/blog", label: "Blog" }];
+export function getFooterQuickLinks(showBlog: boolean, showPortfolio = false): NavLink[] {
+	const links = withPortfolio(baseFooterQuickLinks, showPortfolio);
+	if (!showBlog) return links;
+	return [...links, { href: "/blog", label: "Blog" }];
 }

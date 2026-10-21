@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 
 import { listAllPublishedForSitemap } from "@/lib/blog";
+import { hasPortfolioProjects } from "@/lib/portfolio";
 import { siteConfig } from "@/lib/site-config";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const posts = await listAllPublishedForSitemap();
+	const [posts, showPortfolio] = await Promise.all([listAllPublishedForSitemap(), hasPortfolioProjects()]);
 
 	const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
 		url: `${siteConfig.url}/blog/${post.slug}`,
@@ -26,6 +27,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			changeFrequency: "daily",
 			priority: 0.8,
 		},
+		...(showPortfolio
+			? [
+					{
+						url: `${siteConfig.url}/portfolio`,
+						lastModified: new Date(),
+						changeFrequency: "weekly" as const,
+						priority: 0.8,
+					},
+				]
+			: []),
 		...blogEntries,
 	];
 }

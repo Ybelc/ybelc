@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Logo } from "@/components/brand/logo";
 import { ContactTrigger } from "@/components/contact/contact-trigger";
 import { hasPublishedPosts } from "@/lib/blog";
+import { hasPortfolioProjects } from "@/lib/portfolio";
 import { getFooterQuickLinks, hasContactInfo, siteConfig, solutions } from "@/lib/site-config";
 
 const socialIcons = {
@@ -17,8 +18,8 @@ const linkClass = "text-sm text-y-muted transition-colors hover:text-white";
 
 export async function SiteFooter() {
 	const year = new Date().getFullYear();
-	const showBlog = await hasPublishedPosts();
-	const footerQuickLinks = getFooterQuickLinks(showBlog);
+	const [showBlog, showPortfolio] = await Promise.all([hasPublishedPosts(), hasPortfolioProjects()]);
+	const footerQuickLinks = getFooterQuickLinks(showBlog, showPortfolio);
 	const { email, phone, location } = siteConfig.contact;
 
 	return (

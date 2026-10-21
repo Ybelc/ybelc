@@ -6,8 +6,8 @@ import { DifferentialsSection } from "@/components/sections/differentials-sectio
 import { EcosystemSection } from "@/components/sections/ecosystem-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { HeroSection } from "@/components/sections/hero-section";
+import { PortfolioSection } from "@/components/sections/portfolio-section";
 import { ServicesSection } from "@/components/sections/services-section";
-import { X } from "@components/";
 
 export default function Home() {
 	return (
@@ -17,6 +17,7 @@ export default function Home() {
 			<main id="main-content">
 				<HeroSection />
 				<ServicesSection />
+				<PortfolioSection />
 				<EcosystemSection />
 				<DifferentialsSection />
 				<FinalCtaSection />
