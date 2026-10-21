@@ -356,21 +356,21 @@ function RailPanel({
 						style={{ "--i": 0 } as React.CSSProperties}
 					>
 						<span className="pf-chip">{p.category}</span>
-						{p.year ? <span className="pf-year">{p.year}</span> : null}
+						{/* {p.year ? <span className="pf-year">{p.year}</span> : null}
 						{p.status === "draft" ? (
 							<span className="pf-chip pf-chip-draft">Rascunho</span>
-						) : null}
-						{hasVideo ? (
+						) : null} */}
+						{/* {hasVideo ? (
 							<span className="pf-badge">
 								<Play className="size-3" aria-hidden="true" /> Vídeo
 							</span>
-						) : null}
-						{p.demo_url ? (
+						) : null} */}
+						{/* {p.demo_url ? (
 							<span className="pf-badge">
 								<MousePointerClick className="size-3" aria-hidden="true" />{" "}
 								Interativo
 							</span>
-						) : null}
+						) : null} */}
 					</div>
 
 					<h3
@@ -427,7 +427,7 @@ function RailPanel({
 							{fine ? "Clique para explorar" : "Toque para explorar"}
 							<ArrowUpRight className="size-4" />
 						</span>
-						{p.demo_url ? (
+						{/* {p.demo_url ? (
 							<a
 								href={p.demo_url}
 								target="_blank"
@@ -439,7 +439,7 @@ function RailPanel({
 								<MousePointerClick className="size-3.5" aria-hidden="true" />{" "}
 								Demo
 							</a>
-						) : null}
+						) : null} */}
 						{p.repository_url ? (
 							<a
 								href={p.repository_url}

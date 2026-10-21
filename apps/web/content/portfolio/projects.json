@@ -3,28 +3,25 @@
 		{
 			"id": "exemplo-telemetria-iot",
 			"slug": "central-de-telemetria-iot",
-			"title": "Central de Telemetria IoT",
-			"tagline": "Sensores falam. O painel escuta em tempo real.",
-			"short_description": "Projeto de exemplo: monitoramento de sensores distribuídos com alertas automáticos e histórico consultável.",
-			"full_description": "Projeto de exemplo para demonstrar a vitrine com vídeo de demonstração.\n\nDispositivos de campo enviam leituras de temperatura, consumo e presença para uma camada de ingestão. As regras de automação disparam alertas e o painel exibe a operação em tempo real.\n\nSubstitua este conteúdo pelo seu projeto real no painel /admin/portfolio.",
-			"category": "Internet das Coisas",
+			"title": "Memobelc",
+			"tagline": "Aprendizado inteligente que evolui com você!",
+			"short_description": "Memobelc é uma plataforma que transforma o aprendizado com o poder da repetição espaçada e da IA.",
+			"full_description": "Memobelc aprimora seu aprendizado com um sistema inteligente que personaliza o conteúdo para focar exatamente no que você precisa. Adaptando ao seu progresso, reforçando automaticamente os pontos que você mais esquece e evoluindo no seu próprio ritmo. Uma experiência de aprendizagem contínua e eficiente, feita sob medida para você.",
+			"category": "Software sob medida",
 			"area": "iot",
 			"technologies": [
-				"ESP32",
-				"MQTT",
-				"Node.js",
-				"TimescaleDB",
-				"Next.js"
+				"Python",
+				"React Native"
 			],
 			"cover_image": {
-				"src": "/portfolio/exemplos/exemplo-telemetria-capa.jpg",
-				"alt": "Ilustração de uma rede de dispositivos conectados"
+				"src": "/portfolio/exemplos/memobelc-logo.png",
+				"alt": "Memobelc"
 			},
 			"gallery": [],
 			"video": {
 				"kind": "file",
-				"src": "/portfolio/exemplos/exemplo-telemetria-demo.mp4",
-				"poster": "/portfolio/exemplos/exemplo-telemetria-capa.jpg"
+				"src": "/portfolio/exemplos/memobelc.mp4",
+				"poster": "/portfolio/exemplos/memobelc-logo.png"
 			},
 			"project_url": null,
 			"demo_url": "https://example.com",
@@ -39,129 +36,35 @@
 		{
 			"id": "exemplo-gestao-operacional",
 			"slug": "plataforma-de-gestao-operacional",
-			"title": "Plataforma de Gestão Operacional",
-			"tagline": "Do processo manual ao fluxo automatizado.",
-			"short_description": "Projeto de exemplo: sistema web sob medida com dashboards, permissões e integrações via API.",
-			"full_description": "Projeto de exemplo para demonstrar a galeria de imagens.\n\nUma plataforma construída sobre o processo real da empresa: cadastro, aprovações, indicadores e integrações com sistemas legados.\n\nSubstitua este conteúdo pelo seu projeto real no painel /admin/portfolio.",
+			"title": "ECONMESH",
+			"tagline": "Eficiência do Futuro é Circular!",
+			"short_description": "Um ecossistema digital que mapeia, conecta e viabiliza fluxos de recursos (materiais, água, energia e serviços) entre diversas empresas, de forma inteligente e confiável.",
+			"full_description": "Plataforma completa e integrada que atua como um ecossistema digital que mapeia, conecta e viabiliza fluxos de recursos (materiais, água, energia e serviços) entre diversas empresas, de forma inteligente e confiável. Seu diferencial reside em oferecer uma infraestrutura digital estratégica projetada para converter a complexidade da simbiose industrial em operações ágeis e rastreáveis. Ao integrar tecnologias como inteligência artificial e blockchain, atua como um motor de inteligência que conecta geradores de resíduos a receptores de matéria-prima secundária de forma otimizada. Através do algoritmo de Score Match, a plataforma elimina a assimetria de informações, permitindo que subprodutos industriais sejam transacionados com base em sua viabilidade técnica e econômica real. Estruturada para ser a ferramenta digital que vai apoiar as empresas no desafio da transição circular.",
 			"category": "Software sob medida",
 			"area": "software",
 			"technologies": [
-				"TypeScript",
-				"Next.js",
-				"PostgreSQL",
-				"FastAPI",
-				"Docker"
 			],
 			"cover_image": {
-				"src": "/portfolio/exemplos/exemplo-gestao-capa.jpg",
-				"alt": "Painel com gráficos de indicadores operacionais"
+				"src": "/portfolio/exemplos/ECONMESH-CAPA.png",
+				"alt": "Econmesh"
 			},
-			"gallery": [
-				{
-					"src": "/portfolio/exemplos/exemplo-gestao-tela-2.jpg",
-					"alt": "Tela alternativa do painel de indicadores"
-				},
-				{
-					"src": "/portfolio/exemplos/exemplo-api-capa.jpg",
-					"alt": "Mapa de ambientes monitorados"
-				}
-			],
-			"video": null,
-			"project_url": "https://example.com",
+			"gallery": [],			
+
+			"video": {
+				"kind": "file",
+				"src": "/portfolio/exemplos/Econmesh.mp4",
+				"poster": "/portfolio/exemplos/ECONMESH-CAPA.png"
+			},
+			"project_url": "https://econmesh.com.br/",
 			"demo_url": null,
-			"repository_url": "https://github.com/",
+			"repository_url": null,
 			"year": 2026,
 			"is_featured": true,
 			"display_order": 2,
 			"status": "draft",
 			"created_at": "2026-10-18T12:00:00.000Z",
 			"updated_at": "2026-10-18T12:00:00.000Z"
-		},
-		{
-			"id": "exemplo-casa-conectada",
-			"slug": "casa-conectada",
-			"title": "Casa Conectada",
-			"tagline": "Luz, clima e acesso em um único toque.",
-			"short_description": "Projeto de exemplo sem mídia: mostra o visual alternativo gerado automaticamente.",
-			"full_description": "Projeto de exemplo cadastrado sem imagens nem vídeo, para demonstrar o estado visual alternativo da vitrine.\n\nCenas automáticas integram iluminação, climatização e sensores de presença, controladas por aplicativo e por voz.",
-			"category": "Automação residencial",
-			"area": "automacao",
-			"technologies": [
-				"Home Assistant",
-				"Zigbee",
-				"React Native"
-			],
-			"cover_image": null,
-			"gallery": [],
-			"video": null,
-			"project_url": null,
-			"demo_url": null,
-			"repository_url": null,
-			"year": 2025,
-			"is_featured": true,
-			"display_order": 3,
-			"status": "draft",
-			"created_at": "2026-10-18T12:00:00.000Z",
-			"updated_at": "2026-10-18T12:00:00.000Z"
-		},
-		{
-			"id": "exemplo-controle-de-acesso",
-			"slug": "controle-de-acesso-inteligente",
-			"title": "Controle de Acesso Inteligente",
-			"tagline": "Cada porta sabe quem pode passar.",
-			"short_description": "Projeto de exemplo: credenciais digitais, trilha de auditoria e integração com câmeras.",
-			"full_description": "Projeto de exemplo sem mídia cadastrada.\n\nFechaduras conectadas validam credenciais em tempo real, registram cada evento e acionam o monitoramento quando algo foge do padrão.",
-			"category": "Segurança tecnológica",
-			"area": "seguranca",
-			"technologies": [
-				"RFID",
-				"Python",
-				"OAuth 2.0",
-				"WebSockets"
-			],
-			"cover_image": null,
-			"gallery": [],
-			"video": null,
-			"project_url": null,
-			"demo_url": null,
-			"repository_url": null,
-			"year": 2025,
-			"is_featured": true,
-			"display_order": 4,
-			"status": "draft",
-			"created_at": "2026-10-18T12:00:00.000Z",
-			"updated_at": "2026-10-18T12:00:00.000Z"
-		},
-		{
-			"id": "exemplo-api-integracao",
-			"slug": "hub-de-integracoes",
-			"title": "Hub de Integrações",
-			"tagline": "Sistemas diferentes, uma só conversa.",
-			"short_description": "Projeto de exemplo: camada de APIs que conecta ERP, e-commerce e dispositivos de campo.",
-			"full_description": "Projeto de exemplo (não destacado) para demonstrar a página completa do portfólio.\n\nUm barramento de integrações padroniza dados entre sistemas e expõe APIs seguras para parceiros.",
-			"category": "Software sob medida",
-			"area": "software",
-			"technologies": [
-				"Go",
-				"gRPC",
-				"Kafka",
-				"Kubernetes"
-			],
-			"cover_image": {
-				"src": "/portfolio/exemplos/exemplo-api-capa.jpg",
-				"alt": "Planta de ambientes com pontos de integração"
-			},
-			"gallery": [],
-			"video": null,
-			"project_url": null,
-			"demo_url": null,
-			"repository_url": "https://github.com/",
-			"year": 2024,
-			"is_featured": false,
-			"display_order": 6,
-			"status": "draft",
-			"created_at": "2026-10-18T12:00:00.000Z",
-			"updated_at": "2026-10-18T12:00:00.000Z"
 		}
+
 	]
 }

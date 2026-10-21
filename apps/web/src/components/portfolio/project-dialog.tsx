@@ -296,10 +296,10 @@ function DialogBody({
 					>
 						<div className="flex flex-wrap items-center gap-2">
 							<span className="pf-chip">{p.category}</span>
-							{p.year ? <span className="pf-year">{p.year}</span> : null}
+							{/* {p.year ? <span className="pf-year">{p.year}</span> : null}
 							{p.status === "draft" ? (
 								<span className="pf-chip pf-chip-draft">Rascunho</span>
-							) : null}
+							) : null} */}
 						</div>
 						<h2
 							id="pf-dialog-title"
@@ -360,7 +360,7 @@ function DialogBody({
 								<ExternalLink className="size-4" aria-hidden="true" />
 							</a>
 						) : null}
-						{p.demo_url ? (
+						{/* {p.demo_url ? (
 							<a
 								href={p.demo_url}
 								target="_blank"
@@ -370,7 +370,7 @@ function DialogBody({
 								<MousePointerClick className="size-4" aria-hidden="true" />{" "}
 								Abrir demonstração
 							</a>
-						) : null}
+						) : null} */}
 						{p.repository_url ? (
 							<a
 								href={p.repository_url}
